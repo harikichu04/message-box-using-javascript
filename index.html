@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Box with Image</title>
+    <style>
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.message-box {
+    position: relative;
+    width: 300px;
+    padding: 100px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.774);
+    text-align: center;
+}
+
+.message-image {
+    position: absolute;
+    top: -30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message-box input {
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+
+}
+#bt1{
+    margin-right: 40PX;
+    width: 100PX;
+    height: 30px;
+    border-radius: 20px;
+
+}
+#bt2{
+    margin-left: 50PX;
+    width: 100PX;
+    height: 30px;
+    border-radius: 20px;
+
+}
+
+
+    </style>
+    <script>
+        function accept(){
+            
+            let message=document.getElementById("input")
+            let value=message.value
+            localStorage.setItem("message",value)
+            alert("accepted")
+
+        }
+        function decline(){
+            let message=document.getElementById("input")
+            let value=message.value
+            localStorage.removeItem("message",value)
+            alert("declined")
+
+
+        }
+    </script>
+</head>
+<body>
+    <div class="message-box">
+        <img src="/images/car.png" alt="Image" class="message-image">
+        <input id="input" placeholder="Enter your Message"><br><br><br><br>
+        <span><button id="bt1" onclick="accept()">Accept</button></span>
+        <span><button id="bt2" onclick="decline()">decline</button></span>
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
